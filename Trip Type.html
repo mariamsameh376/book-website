@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Booking</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        textarea {
+            height: 80px;
+            resize: vertical;
+        }
+        
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-next {
+            background-color: #2ecc71;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .btn-next:hover {
+            background-color: #27ae60;
+        }
+        
+        .add-stop {
+            background-color: #f39c12;
+            margin-top: 10px;
+        }
+        
+        .add-stop:hover {
+            background-color: #e67e22;
+        }
+        
+        .stop-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+            position: relative;
+        }
+        
+        .remove-stop {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        
+        .required:after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        .payment-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .payment-form h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .confirmation {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .confirmation-icon {
+            font-size: 50px;
+            color: #2ecc71;
+            margin-bottom: 20px;
+        }
+        
+        .error {
+            border-color: #e74c3c !important;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="login-section">
+        <h1>Login</h1>
+        <div class="section">
+            <div class="form-group">
+                <label for="email" class="required">Email</label>
+                <input type="email" id="email" required>
+                <div class="error-message" id="email-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="required">Password</label>
+                <input type="password" id="password" required>
+                <div class="error-message" id="password-error"></div>
+            </div>
+            <button class="btn" id="login-btn">Login</button>
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="#" id="skip-login">Continue as guest</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="booking-section" style="display:none;">
+        <h1>Ride Booking Request</h1>
+        
+        <div class="section">
+            <h2>Trip Type</h2>
+            <div class="form-group">
+                <div style="margin-bottom: 10px;">
+                    <input type="radio" id="hourly" name="trip-type">
+                    <label for="hourly" style="display: inline;">Hourly</label>
+                </div>
+                <div id="hourly-options" style="display:none; margin-left: 20px;">
+                    <div style="margin-bottom: 10px;">
+                        <input type="radio" id="one-way" name="hourly-option">
+                        <label for="one-way" style="display: inline;">One Way</label>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <input type="radio" id="round-hourly" name="hourly-option">
+                        <label for="round-hourly" style="display: inline;">Round Trip</label>
+                    </div>
+                    <div id="hourly-details" style="display:none;">
+                        <label for="hours-count" class="required">Number of Hours</label>
+                        <input type="number" id="hours-count" min="1">
+                    </div>
+                </div>
+                <div style="margin-top: 10px;">
+                    <input type="radio" id="round-trip" name="trip-type" checked>
+                    <label for="round-trip" style="display: inline;">Round Trip</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Order Details</h2>
+            <div class="form-group">
+                <label for="order-type" class="required">Order Type</label>
+                <select id="order-type" required>
+                    <option value="">Select Order Type</option>
+                    <option value="airport">Airport Transfer</option>
+                    <option value="business">Business Meeting</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="other">Other</option>
+                </select>
+                <div class="error-message" id="order-type-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="pickup-time" class="required">Pick-up Date & Time</label>
+                <input type="datetime-local" id="pickup-time" required>
+                <div class="error-message" id="pickup-time-error"></div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Pick-up Location</h2>
+            <div class="form-group">
+                <label class="required">Address</label>
+                <input type="text" id="pickup-address" required>
+                <div class="error-message" id="pickup-address-error"></div>
+            </div>
+            <div class="form-group">
+                <label>Airport (optional)</label>
+                <input type="text" id="pickup-airport">
+            </div>
+        </div>
+        
+        <div id="additional-stops"></div>
+        
+        <button type="button" class="btn add-stop" id="add-stop-btn">Add Stop</button>
+        
+        <div class="section">
+            <h2>Drop-off Location</h2>
+            <div class="form-group">
+                <label class="required">Address</label>
+                <input type="text" id="dropoff-address" required>
+                <div class="error-message" id="dropoff-address-error"></div>
+            </div>
+            <div class="form-group">
+                <label>Airport (optional)</label>
+                <input type="text" id="dropoff-airport">
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Additional Details</h2>
+            <div class="form-group">
+                <label for="passenger-count" class="required">Passenger Count</label>
+                <input type="number" id="passenger-count" min="1" max="10" required>
+                <div class="error-message" id="passenger-count-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="special-requests">Special Requests</label>
+                <textarea id="special-requests" rows="3"></textarea>
+            </div>
+        </div>
+        
+        <button type="button" class="btn btn-next" id="next-btn">Next Step</button>
+    </div>
+
+    <div class="container" id="confirmation-section" style="display:none;">
+        <!-- Will be filled dynamically -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const loginSection = document.getElementById('login-section');
+            const bookingSection = document.getElementById('booking-section');
+            const confirmationSection = document.getElementById('confirmation-section');
+            
+            // Login functionality
+            document.getElementById('login-btn').addEventListener('click', function() {
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                let isValid = true;
+                
+                // Clear previous errors
+                document.getElementById('email-error').textContent = '';
+                document.getElementById('password-error').textContent = '';
+                
+                // Validate email
+                if (!email) {
+                    document.getElementById('email-error').textContent = 'Email is required';
+                    isValid = false;
+                } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    document.getElementById('email-error').textContent = 'Please enter a valid email';
+                    isValid = false;
+                }
+                
+                // Validate password
+                if (!password) {
+                    document.getElementById('password-error').textContent = 'Password is required';
+                    isValid = false;
+                } else if (password.length < 6) {
+                    document.getElementById('password-error').textContent = 'Password must be at least 6 characters';
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    loginSection.style.display = 'none';
+                    bookingSection.style.display = 'block';
+                }
+            });
+            
+            // Skip login
+            document.getElementById('skip-login').addEventListener('click', function(e) {
+                e.preventDefault();
+                loginSection.style.display = 'none';
+                bookingSection.style.display = 'block';
+            });
+            
+            // Trip type selection
+            document.getElementById('hourly').addEventListener('change', function() {
+                const hourlyOptions = document.getElementById('hourly-options');
+                hourlyOptions.style.display = this.checked ? 'block' : 'none';
+                
+                if (this.checked) {
+                    document.getElementById('one-way').addEventListener('change', function() {
+                        document.getElementById('hourly-details').style.display = 
+                            this.checked ? 'block' : 'none';
+                    });
+                }
+            });
+            
+            // Add stop functionality
+            let stopCount = 0;
+            document.getElementById('add-stop-btn').addEventListener('click', function() {
+                stopCount++;
+                const stopDiv = document.createElement('div');
+                stopDiv.className = 'section stop-item';
+                stopDiv.innerHTML = `
+                    <button type="button" class="remove-stop">Remove</button>
+                    <h2>Stop ${stopCount}</h2>
+                    <div class="form-group">
+                        <label class="required">Address</label>
+                        <input type="text" class="stop-address" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Airport (optional)</label>
+                        <input type="text" class="stop-airport">
+                    </div>
+                `;
+                document.getElementById('additional-stops').appendChild(stopDiv);
+                
+                stopDiv.querySelector('.remove-stop').addEventListener('click', function() {
+                    stopDiv.remove();
+                    stopCount--;
+                });
+            });
+            
+            // Form submission
+            document.getElementById('next-btn').addEventListener('click', async function() {
+                // Validate form
+                let isValid = validateBookingForm();
+                
+                if (isValid) {
+                    const bookingData = collectBookingData();
+                    
+                    try {
+                        // Simulate API call
+                        const result = await simulateBookingAPI(bookingData);
+                        
+                        if (result.success) {
+                            showPaymentForm(result.price, result.bookingId);
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert('Error processing booking');
+                    }
+                }
+            });
+            
+            // Form validation
+            function validateBookingForm() {
+                let isValid = true;
+                
+                // Clear previous errors
+                document.querySelectorAll('.error-message').forEach(el => {
+                    el.textContent = '';
+                });
+                
+                document.querySelectorAll('[required]').forEach(field => {
+                    if (!field.value) {
+                        field.classList.add('error');
+                        const errorId = field.id ? `${field.id}-error` : '';
+                        const errorEl = document.getElementById(errorId);
+                        if (errorEl) {
+                            errorEl.textContent = 'This field is required';
+                        }
+                        isValid = false;
+                    } else {
+                        field.classList.remove('error');
+                    }
+                });
+                
+                // Validate passenger count
+                const passengerCount = document.getElementById('passenger-count');
+                if (passengerCount.value < 1 || passengerCount.value > 10) {
+                    passengerCount.classList.add('error');
+                    document.getElementById('passenger-count-error').textContent = 
+                        'Please enter a number between 1 and 10';
+                    isValid = false;
+                }
+                
+                // Validate stops
+                document.querySelectorAll('.stop-address').forEach((stop, index) => {
+                    if (!stop.value) {
+                        stop.classList.add('error');
+                        isValid = false;
+                    } else {
+                        stop.classList.remove('error');
+                    }
+                });
+                
+                return isValid;
+            }
+            
+            // Collect booking data
+            function collectBookingData() {
+                const bookingData = {
+                    tripType: document.querySelector('input[name="trip-type"]:checked').id,
+                    orderType: document.getElementById('order-type').value,
+                    pickupTime: document.getElementById('pickup-time').value,
+                    pickupAddress: document.getElementById('pickup-address').value,
+                    pickupAirport: document.getElementById('pickup-airport').value,
+                    dropoffAddress: document.getElementById('dropoff-address').value,
+                    dropoffAirport: document.getElementById('dropoff-airport').value,
+                    passengerCount: document.getElementById('passenger-count').value,
+                    specialRequests: document.getElementById('special-requests').value,
+                    stops: [],
+                    email: document.getElementById('email')?.value || 'guest@example.com'
+                };
+                
+                if (bookingData.tripType === 'hourly') {
+                    bookingData.hourlyType = document.querySelector('input[name="hourly-option"]:checked')?.id;
+                    bookingData.hoursCount = document.getElementById('hours-count')?.value;
+                }
+                
+                document.querySelectorAll('.stop-item').forEach((stop, index) => {
+                    bookingData.stops.push({
+                        address: stop.querySelector('.stop-address').value,
+                        airport: stop.querySelector('.stop-airport').value
+                    });
+                });
+                
+                return bookingData;
+            }
+            
+            // Simulate booking API
+            function simulateBookingAPI(bookingData) {
+                return new Promise((resolve) => {
+                    // Simulate API delay
+                    setTimeout(() => {
+                        // Calculate price
+                        let price = 100;
+                        if (bookingData.tripType === 'hourly') {
+                            price *= bookingData.hoursCount || 3;
+                        } else {
+                            price *= 2;
+                            price += bookingData.stops.length * 20;
+                        }
+                        
+                        resolve({
+                            success: true,
+                            bookingId: 'BK-' + Date.now().toString().slice(-6),
+                            price: price
+                        });
+                    }, 1000);
+                });
+            }
+            
+            // Show payment form
+            function showPaymentForm(price, bookingId) {
+                bookingSection.style.display = 'none';
+                
+                confirmationSection.innerHTML = `
+                    <div class="payment-form">
+                        <h2>Complete Payment</h2>
+                        <p>Amount Due: $${price.toFixed(2)}</p>
+                        
+                        <div class="form-group">
+                            <label>Card Number *</label>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                            <div class="error-message" id="card-number-error"></div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Expiry Date *</label>
+                                <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                                <div class="error-message" id="expiry-date-error"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>CVV *</label>
+                                <input type="text" id="cvv" placeholder="123" required>
+                                <div class="error-message" id="cvv-error"></div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn" id="pay-now-btn">Pay Now</button>
+                    </div>
+                `;
+                
+                confirmationSection.style.display = 'block';
+                
+                document.getElementById('pay-now-btn').addEventListener('click', function() {
+                    processPayment(bookingId, price);
+                });
+            }
+            
+            // Process payment
+            function processPayment(bookingId, price) {
+                const cardNumber = document.getElementById('card-number').value;
+                const expiryDate = document.getElementById('expiry-date').value;
+                const cvv = document.getElementById('cvv').value;
+                let isValid = true;
+                
+                // Clear previous errors
+                document.getElementById('card-number-error').textContent = '';
+                document.getElementById('expiry-date-error').textContent = '';
+                document.getElementById('cvv-error').textContent = '';
+                
+                // Validate card number
+                if (!cardNumber || !/^\d{16}$/.test(cardNumber.replace(/\s/g, ''))) {
+                    document.getElementById('card-number-error').textContent = 'Please enter a valid card number';
+                    isValid = false;
+                }
+                
+                // Validate expiry date
+                if (!expiryDate || !/^\d{2}\/\d{2}$/.test(expiryDate)) {
+                    document.getElementById('expiry-date-error').textContent = 'Please enter a valid expiry date (MM/YY)';
+                    isValid = false;
+                }
+                
+                // Validate CVV
+                if (!cvv || !/^\d{3,4}$/.test(cvv)) {
+                    document.getElementById('cvv-error').textContent = 'Please enter a valid CVV';
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Simulate payment processing
+                    setTimeout(() => {
+                        showFinalConfirmation(bookingId, price);
+                    }, 1500);
+                }
+            }
+            
+            // Show final confirmation
+            function showFinalConfirmation(bookingId, price) {
+                confirmationSection.innerHTML = `
+                    <div class="confirmation">
+                        <div class="confirmation-icon">✓</div>
+                        <h1>Booking Confirmed!</h1>
+                        <p>Booking ID: ${bookingId}</p>
+                        <p>Amount Paid: $${price.toFixed(2)}</p>
+                        <p>Thank you for using our service</p>
+                        <button class="btn" id="new-booking-btn">New Booking</button>
+                    </div>
+                `;
+                
+                document.getElementById('new-booking-btn').addEventListener('click', function() {
+                    location.reload();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
