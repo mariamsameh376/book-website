@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - AMBASSADORS Limousine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+
+ /* Global Styles */
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+   }
+header {
+    background-color: #000;
+    color: gold;
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+.logo {
+    font-size: 22px; 
+    font-weight: bold;
+    flex-grow: 1; 
+}
+
+.logo::first-letter {
+    font-size: 35px;
+    border: 2px solid gold;
+    border-right: transparent;
+    padding-left: 5px;
+    color: rgb(255, 255, 255);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 15px; 
+}
+
+nav ul li {
+    margin: 0; 
+    padding: 5px 10px; 
+}
+
+nav ul li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px; 
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: gold;
+    transform: scaleX(0); 
+    transition: transform 0.3s ease-in-out;
+}
+
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+
+nav ul li a:hover {
+    color: gold;
+}
+
+
+.btn:hover {
+    background-color: rgba(242, 233, 151, 0.91);
+    color: black;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.btn {
+    background-color: gold;
+    padding: 8px 15px; 
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    list-style: none;
+    padding: 10px;
+    width: 200px;
+    top: 30px; 
+    left: 0;
+    border-radius: 5px;
+}
+
+
+.dropdown-menu li {
+    padding: 8px 10px;
+}
+
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: gold;
+    color: black;
+}
+
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+}
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+       
+        
+        /* Hero Section */
+        .privacy-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/Users/mariamsameh/Desktop/Book/privacy-banner.webp);
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 60px;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: gold;
+        }
+
+        .contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+    gap: 40px;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+  }
+  
+  .terms-label {
+    color: #ffffff;
+    
+  }
+  
+  
+  .map {
+    flex: 1;
+    min-width: 350px;
+  }
+  
+  .form-section {
+    flex: 1;
+    min-width: 350px;
+    background-color: #111;
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .form-section h2 {
+    color: #5ecfff;
+    margin-bottom: 10px;
+  }
+  
+  .form-section p {
+    margin-bottom: 20px;
+    color: #ccc;
+  }
+  
+  .form-section input,
+  .form-section textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+  }
+  
+  .form-section textarea {
+    height: 120px;
+  }
+  
+  .form-section button {
+    background-color: #5e5eff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .form-section button:hover {
+    background-color: #3f3fdf;
+  }
+        footer {
+    background: #111;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    color: gold;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #1e90ff;
+}
+
+.footer-section p {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-section form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.footer-section input {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+}
+
+.footer-section button {
+    background: #1e90ff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#copyright {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    background: #000;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #1e90ff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #1e90ff;
+}
+    </style>
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">AMBASSADORS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li class="dropdown">
+                    <a href="service.html">Services ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Airport Transfer</a></li>
+                        <li><a href="#">Wedding Limo Service</a></li>
+                        <li><a href="#">Corporate Transportation</a></li>
+                        <li><a href="#">Prom Limo Service</a></li>
+                        <li><a href="#">City Night Tour</a></li>
+                        <li><a href="#">Sports and Live Events</a></li>
+                        <li><a href="#">Hourly Service</a></li>
+                        <li><a href="#">Point to Point</a></li>
+                    </ul>
+                </li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="fleet.html">Fleet</a></li>
+                <li><a href="#">Airports</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" class="btn">Reservations</a></li>
+            </ul>
+            
+        </nav>
+        
+    </header>
+    <section class="privacy-hero">
+        <div class="hero-content">
+            <h1>CONTACT</h1>
+            
+        </div>
+    </section>
+    
+    <div class="contact-container">
+
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=..."
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      
+    
+        <div class="form-section">
+          <h2>Get in Touch</h2>
+          <p>We'd love to hear from you!</p>
+          <form id="contactForm">
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <textarea id="message" placeholder="Type your message" required></textarea>
+            <label  class="terms-label">
+              <input type="checkbox" id="terms" required> I accept the Terms
+            </label>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Fleet</a></li>
+                    <li><a href="#">Tours</a></li>
+                </ul>
+    
+            </div>
+    
+    
+            <div class="footer-section">
+                <h3>Company Info</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Contact & Support</h3>
+                <p><strong>Call:</strong> 615-977-9500</p>
+                <p><strong>Email:</strong> info@ambassadors.limo</p>
+                <a href="#">Home</a>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter for updates on luxury transportation services.</p>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p id="copyright">&copy;2024 AMBASSADORS. All rights reserved. Experience luxury transportation with us.</p>
+            <div class="footer-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-google"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-spotify"></i></a>
+            </div>
+        </div>
+    
+    </footer>
+</body>
+</html>

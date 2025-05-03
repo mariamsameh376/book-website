@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - AMBASSADORS Limousine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+header {
+    background-color: #000;
+    color: gold;
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+.logo {
+    font-size: 22px; 
+    font-weight: bold;
+    flex-grow: 1; 
+}
+
+.logo::first-letter {
+    font-size: 35px;
+    border: 2px solid gold;
+    border-right: transparent;
+    padding-left: 5px;
+    color: rgb(255, 255, 255);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 15px; 
+}
+
+nav ul li {
+    margin: 0; 
+    padding: 5px 10px; 
+}
+
+nav ul li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px; 
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: gold;
+    transform: scaleX(0); 
+    transition: transform 0.3s ease-in-out;
+}
+
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+
+nav ul li a:hover {
+    color: gold;
+}
+
+
+.btn:hover {
+    background-color: rgba(242, 233, 151, 0.91);
+    color: black;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.btn {
+    background-color: gold;
+    padding: 8px 15px; 
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    list-style: none;
+    padding: 10px;
+    width: 200px;
+    top: 30px; 
+    left: 0;
+    border-radius: 5px;
+}
+
+
+.dropdown-menu li {
+    padding: 8px 10px;
+}
+
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: gold;
+    color: black;
+}
+
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+}
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+       
+        
+        /* Hero Section */
+        .terms-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/Users/mariamsameh/Desktop/Book/privacy-banner.webp);
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 60px;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: gold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Main Content */
+        .terms-container {
+            width: 80%;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+        }
+        
+        .terms-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .terms-header h2 {
+            color: #222;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Terms Content */
+        .terms-section {
+            margin-bottom: 40px;
+        }
+        
+        .terms-section h3 {
+            color: #000;
+            margin: 25px 0 15px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid gold;
+            padding-bottom: 5px;
+        }
+        
+        .terms-section h4 {
+            color: #444;
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+        
+        .terms-list {
+            margin: 15px 0 15px 30px;
+        }
+        
+        .terms-list li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid gold;
+            margin: 15px 0;
+        }
+        
+        .note {
+            font-style: italic;
+            color: #666;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+
+                /* إضافة أنماط جديدة للأقسام المضافة */
+                .policy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .policy-table th, .policy-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .policy-table th {
+            background-color: #f2f2f2;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .prohibited-list {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+                /* إضافة أنماط جديدة للأقسام المضافة */
+                .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .requirement-card {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        
+        .requirement-card h5 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            border-bottom: 2px solid gold;
+            padding-bottom: 5px;
+        }
+        
+        .strict-policy {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .update-process {
+            background-color: #e2f3fd;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .privacy-container {
+                width: 95%;
+                padding: 20px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+
+        
+        footer {
+    background: #111;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    color: gold;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #1e90ff;
+}
+
+.footer-section p {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-section form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.footer-section input {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+}
+
+.footer-section button {
+    background: #1e90ff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#copyright {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    background: #000;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #1e90ff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #1e90ff;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">AMBASSADORS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li class="dropdown">
+                    <a href="service.html">Services ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Airport Transfer</a></li>
+                        <li><a href="#">Wedding Limo Service</a></li>
+                        <li><a href="#">Corporate Transportation</a></li>
+                        <li><a href="#">Prom Limo Service</a></li>
+                        <li><a href="#">City Night Tour</a></li>
+                        <li><a href="#">Sports and Live Events</a></li>
+                        <li><a href="#">Hourly Service</a></li>
+                        <li><a href="#">Point to Point</a></li>
+                    </ul>
+                </li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="fleet.html">Fleet</a></li>
+                <li><a href="#">Airports</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="">Terms and Conditions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" class="btn">Reservations</a></li>
+            </ul>
+            
+        </nav>
+        
+    </header>
+        <!-- Hero Section -->
+        <section class="terms-hero">
+            <div class="hero-content">
+                <h1>TERMS AND CONDITIONS</h1>
+              
+            </div>
+        </section>
+    
+        <!-- Main Content -->
+        <div class="terms-container">
+            <div class="terms-header">
+                <h2>AMBASSADORS Limousine Service</h2>
+            
+            </div>
+            
+            <!-- Section 1: Billing -->
+            <div class="terms-section">
+                <h3>1. Billing</h3>
+                <p>We are committed to transparency in our billing process to ensure you understand the charges associated with your reservation.</p>
+                
+                <h4>Reservation Confirmation:</h4>
+                <ul class="terms-list">
+                    <li>A confirmation email will be sent upon booking, detailing the trip type, duration, and estimated costs.</li>
+                    <li>Any applicable deposits will also be outlined in the confirmation.</li>
+                </ul>
+                
+                <h4>Billing Structure:</h4>
+                <div class="highlight-box">
+                    <p><strong>Base Rate:</strong> Includes the agreed-upon trip duration and any services included in your package.</p>
+                    <p><strong>Additional Charges:</strong> May include:</p>
+                    <ul class="terms-list">
+                        <li>Overage and wait time fees</li>
+                        <li>Tolls, parking fees, or other third-party expenses</li>
+                        <li>Additional stops or changes to the itinerary</li>
+                    </ul>
+                    <p><strong>Gratuity:</strong> A standard gratuity of 20% is added unless otherwise stated.</p>
+                </div>
+                
+                <h4>Payment Methods:</h4>
+                <ul class="terms-list">
+                    <li>Accepted payment methods include credit cards, PayPal, and cash.</li>
+                    <li>A valid payment method is required at the time of booking.</li>
+                </ul>
+                
+                <h4>Post-Trip Invoice:</h4>
+                <ul class="terms-list">
+                    <li>After the trip, a detailed invoice will be emailed within 24 hours.</li>
+                    <li>The invoice will itemize all charges.</li>
+                </ul>
+                
+                <p class="note">Payment for any additional charges is due upon receipt of the invoice.</p>
+            </div>
+            
+            <!-- Section 2: Trip Options -->
+            <div class="terms-section">
+                <h3>2. Trip Options</h3>
+                
+                <h4>Point-to-Point Transfers:</h4>
+                <ul class="terms-list">
+                    <li>Includes direct transportation between two locations</li>
+                    <li>Fixed price with no additional time included beyond the trip duration</li>
+                </ul>
+                
+                <h4>Hourly Rentals:</h4>
+                <ul class="terms-list">
+                    <li>Flexible transportation charged by the hour</li>
+                    <li>Minimum rental period of 3 hours</li>
+                </ul>
+                
+                <h4>Special Event Packages:</h4>
+                <ul class="terms-list">
+                    <li>Tailored for weddings, proms, and other events</li>
+                    <li>Package pricing includes specific time blocks and services</li>
+                </ul>
+                
+                <h4>Airport Transfers:</h4>
+                <ul class="terms-list">
+                    <li>Flat-rate service for transportation to and from the airport</li>
+                    <li>Includes 50 minutes for delays or baggage handling</li>
+                </ul>
+            </div>
+            
+            <!-- Section 3: Car Seats -->
+            <div class="terms-section">
+                <h3>3. Car Seats</h3>
+                <p>To ensure the safety of all passengers, especially young children, we adhere to strict car seat guidelines.</p>
+                
+                <h4>Car Seat Requirements:</h4>
+                <ul class="terms-list">
+                    <li><strong>Infants (Under 2 Years Old):</strong> Rear-facing car seat required</li>
+                    <li><strong>Toddlers (2 to 4 Years Old):</strong> Forward-facing car seat with harness required</li>
+                    <li><strong>Young Children (4 to 8 Years Old):</strong> Booster seat required until height of 4'9" or age 8</li>
+                </ul>
+                
+                <h4>Client Responsibility:</h4>
+                <ul class="terms-list">
+                    <li>Clients MUST inform us at booking if a car seat is required</li>
+                    <li>Clients may provide their own car seats</li>
+                    <li>We provide car seats upon request for additional fee</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <p><strong>Note:</strong> Passengers not adhering to car seat policy may not be permitted to travel.</p>
+                </div>
+            </div>
+            
+            <!-- Section 4: Cleaning -->
+            <div class="terms-section">
+                <h3>4. Cleaning</h3>
+                <p>We take pride in providing a clean and comfortable environment for all passengers.</p>
+                
+                <h4>Cleaning Fee Applies For:</h4>
+                <ul class="terms-list">
+                    <li>Spills of food or beverages</li>
+                    <li>Bodily fluids or biohazard cleanup</li>
+                    <li>Excessive trash or debris</li>
+                    <li>Stains from glitter, confetti, or makeup</li>
+                </ul>
+                
+                <h4>Fee Amount:</h4>
+                <p>The cleaning fee starts at $300 and may increase depending on required cleaning.</p>
+                
+                <h4>Process:</h4>
+                <ul class="terms-list">
+                    <li>Chauffeur will document vehicle condition with photos</li>
+                    <li>Client will be notified immediately if fee applies</li>
+                    <li>Detailed report with photos included in invoice</li>
+                </ul>
+            </div>
+            
+            <!-- Section 5: Damages -->
+            <div class="terms-section">
+                <h3>5. Damages</h3>
+                <p>Repair charges apply for any damage caused to the vehicle during reservation.</p>
+                
+                <h4>Examples Include:</h4>
+                <ul class="terms-list">
+                    <li>Tears, burns, or stains on upholstery</li>
+                    <li>Damage to electronic systems</li>
+                    <li>Broken glass or fixtures</li>
+                    <li>Graffiti or markings</li>
+                </ul>
+                
+                <h4>Process:</h4>
+                <ul class="terms-list">
+                    <li>Chauffeur will document damages with photos and report</li>
+                    <li>Client will be informed immediately</li>
+                    <li>Professional assessment of repair costs</li>
+                </ul>
+                
+                <h4>Payment:</h4>
+                <ul class="terms-list">
+                    <li>Repair charges due within 7 days of invoice</li>
+                    <li>Pre-authorized payments will be processed automatically</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <p><strong>Important:</strong> Severe damages may result in additional fees for loss of service revenue.</p>
+                </div>
+            </div>
+
+                    <!-- Section 5: Drugs & Alcohol -->
+        <div class="terms-section">
+            <h3>5. Drugs & Alcohol</h3>
+            <p>At AMBASSADORS, the safety and comfort of all passengers and chauffeurs are our highest priority.</p>
+            
+            <h4>Permitted Alcohol Use:</h4>
+            <div class="highlight-box">
+                <p><strong>Alcoholic Beverages:</strong></p>
+                <ul class="terms-list">
+                    <li>Passengers 21+ may consume alcohol responsibly</li>
+                    <li>All beverages must remain within the vehicle</li>
+                </ul>
+                
+                <p><strong>Prohibited Behavior:</strong></p>
+                <ul class="terms-list">
+                    <li>Excessive consumption leading to disruptive behavior</li>
+                    <li>Open containers outside the vehicle</li>
+                </ul>
+            </div>
+            
+            <h4>Prohibited Drug Use:</h4>
+            <div class="prohibited-list">
+                <ul class="terms-list">
+                    <li>Use, possession, or distribution of illegal substances is forbidden</li>
+                    <li>Cannabis consumption inside the vehicle is prohibited</li>
+                </ul>
+            </div>
+            
+            <h4>Enforcement:</h4>
+            <ul class="terms-list">
+                <li>Chauffeurs may terminate trips for safety violations</li>
+                <li>Incidents will be documented with photos/reports</li>
+            </ul>
+            
+            <h4>Consequences:</h4>
+            <table class="policy-table">
+                <tr>
+                    <th>Violation</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Trip termination</td>
+                    <td>No refund for unused service</td>
+                </tr>
+                <tr>
+                    <td>Illegal activities</td>
+                    <td>Reported to authorities</td>
+                </tr>
+                <tr>
+                    <td>Repeat offenses</td>
+                    <td>Banned from future services</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Section 6: Lost Items -->
+        <div class="terms-section">
+            <h3>6. Lost Items</h3>
+            <p>We strive to ensure your belongings remain secure during your trip.</p>
+            
+            <h4>Guidelines:</h4>
+            <ul class="terms-list">
+                <li>Passengers responsible for personal items</li>
+                <li>Chauffeurs inspect vehicles after each trip</li>
+            </ul>
+            
+            <h4>Reporting Process:</h4>
+            <ol class="terms-list">
+                <li>Contact us immediately at (615) 555-0123</li>
+                <li>Provide trip details and item description</li>
+                <li>We'll verify against found items</li>
+            </ol>
+            
+            <h4>Recovery Options:</h4>
+            <div class="highlight-box">
+                <ul class="terms-list">
+                    <li>Office pickup (free)</li>
+                    <li>Shipping to address (fee applies)</li>
+                    <li>Chauffeur delivery (fee applies)</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <p><strong>Note:</strong> Unclaimed items donated after 30 days. We're not liable for lost items.</p>
+            </div>
+        </div>
+        
+        <!-- Section 7: VIP Experience -->
+        <div class="terms-section">
+            <h3>7. VIP Experience</h3>
+            <p>Our premium service offering unmatched luxury and personalization.</p>
+            
+            <h4>Features:</h4>
+            <table class="policy-table">
+                <tr>
+                    <th>Service</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Dedicated Chauffeur</td>
+                    <td>Specialized training for exceptional service</td>
+                </tr>
+                <tr>
+                    <td>Custom Amenities</td>
+                    <td>Premium beverages, custom playlists, fresh flowers</td>
+                </tr>
+                <tr>
+                    <td>Priority Scheduling</td>
+                    <td>Guaranteed availability during peak times</td>
+                </tr>
+                <tr>
+                    <td>Enhanced Privacy</td>
+                    <td>Tinted windows, secure communication</td>
+                </tr>
+            </table>
+            
+            <h4>Booking Requirements:</h4>
+            <ul class="terms-list">
+                <li>Request at time of booking</li>
+                <li>48-hour notice for customizations</li>
+                <li>Premium surcharge applies</li>
+            </ul>
+        </div>
+        
+        <!-- Section 8: Overages & Wait Times -->
+        <div class="terms-section">
+            <h3>8. Overages & Wait Times</h3>
+            
+            <h4>Charge Structure:</h4>
+            <table class="policy-table">
+                <tr>
+                    <th>Type</th>
+                    <th>Grace Period</th>
+                    <th>Rate</th>
+                </tr>
+                <tr>
+                    <td>Overage Time</td>
+                    <td>None</td>
+                    <td>$15 per 15-min increment</td>
+                </tr>
+                <tr>
+                    <td>Wait Time</td>
+                    <td>15 minutes</td>
+                    <td>$1 per minute</td>
+                </tr>
+            </table>
+            
+            <h4>Process:</h4>
+            <ul class="terms-list">
+                <li>Chauffeur logs time digitally</li>
+                <li>Client receives real-time notifications</li>
+                <li>Signature required for acknowledgment</li>
+            </ul>
+            
+            <div class="warning-box">
+                <p>Detailed invoice with time breakdown sent within 24 hours. Payment due upon receipt.</p>
+            </div>
+        </div>
+        
+        <!-- Section 9: Passenger Behavior -->
+        <div class="terms-section">
+            <h3>9. Passenger Behavior</h3>
+            <p>We maintain a safe and respectful environment for all.</p>
+            
+            <h4>Expected Conduct:</h4>
+            <ul class="terms-list">
+                <li>Respect chauffeur instructions</li>
+                <li>Treat vehicle with care</li>
+                <li>Maintain reasonable noise levels</li>
+                <li>Comply with all laws</li>
+            </ul>
+            
+            <h4>Prohibited Actions:</h4>
+            <div class="prohibited-list">
+                <ul class="terms-list">
+                    <li>Aggressive or threatening behavior</li>
+                    <li>Vandalism or property damage</li>
+                    <li>Illegal substance use</li>
+                    <li>Excessive intoxication</li>
+                </ul>
+            </div>
+            
+            <h4>Enforcement:</h4>
+            <ol class="terms-list">
+                <li>Initial warning from chauffeur</li>
+                <li>Trip termination if behavior continues</li>
+                <li>Documentation with photos/reports</li>
+                <li>Possible legal action for severe violations</li>
+            </ol>
+            
+            <h4>Consequences:</h4>
+            <ul class="terms-list">
+                <li>Cleaning/damage fees</li>
+                <li>Service bans for repeat offenders</li>
+                <li>Legal prosecution when warranted</li>
+            </ul>
+        </div>
+
+                        <!-- Section 10: Pick-up/Drop-off Locations -->
+                        <div class="terms-section">
+                            <h3>10. Pick-up/Drop-off Locations</h3>
+                            <p>To ensure safety and luxury experience for our passengers.</p>
+                            
+                            <h4>Location Requirements:</h4>
+                            <div class="requirements-grid">
+                                <div class="requirement-card">
+                                    <h5>Space Requirements</h5>
+                                    <ul class="terms-list">
+                                        <li>Must accommodate safe parking</li>
+                                        <li>Proper passenger boarding area</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="requirement-card">
+                                    <h5>Surface & Lighting</h5>
+                                    <ul class="terms-list">
+                                        <li>Smooth, level surface</li>
+                                        <li>Well-lit for day/night operations</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="requirement-card">
+                                    <h5>Traffic Safety</h5>
+                                    <ul class="terms-list">
+                                        <li>Clear of vehicle/pedestrian traffic</li>
+                                        <li>ADA-compliant access</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="requirement-card">
+                                    <h5>Consequences</h5>
+                                    <ul class="terms-list">
+                                        <li>Possible service delays</li>
+                                        <li>Safety risks and liability</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Section 11: Seating Capacity -->
+                        <div class="terms-section">
+                            <h3>11. Seating Capacity</h3>
+                            <p>Ensuring safety and compliance with state laws.</p>
+                            
+                            <h4>Requirements:</h4>
+                            <ul class="terms-list">
+                                <li>Vehicles have clearly marked capacity limits</li>
+                                <li>Strict adherence to DOT regulations</li>
+                                <li>Seatbelts required for all passengers</li>
+                            </ul>
+                            
+                            <h4>Overcrowding Policy:</h4>
+                            <div class="strict-policy">
+                                <ul class="terms-list">
+                                    <li>Service denial for overcrowding</li>
+                                    <li>Possible rebooking on larger vehicle</li>
+                                    <li>Termination of service for violations</li>
+                                </ul>
+                            </div>
+                            
+                            <p class="note">Customers responsible for accurate passenger counts when booking.</p>
+                        </div>
+                        
+                        <!-- Section 12: Smoking -->
+                        <div class="terms-section">
+                            <h3>12. Smoking</h3>
+                            <p>Strictly prohibited to maintain luxury environment.</p>
+                            
+                            <div class="strict-policy">
+                                <h4>Prohibited Items:</h4>
+                                <ul class="terms-list">
+                                    <li>Traditional cigarettes/cigars</li>
+                                    <li>E-cigarettes/vape pens</li>
+                                    <li>Any smoking devices</li>
+                                </ul>
+                            </div>
+                            
+                            <h4>Consequences:</h4>
+                            <table class="policy-table">
+                                <tr>
+                                    <th>Violation</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr>
+                                    <td>Smoking in vehicle</td>
+                                    <td>Immediate service termination</td>
+                                </tr>
+                                <tr>
+                                    <td>Cleaning required</td>
+                                    <td>$500 fee minimum</td>
+                                </tr>
+                                <tr>
+                                    <td>Damage repairs</td>
+                                    <td>Actual cost + 20% service fee</td>
+                                </tr>
+                                <tr>
+                                    <td>Repeat offenses</td>
+                                    <td>Permanent service ban</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <!-- Section 13: Trip Updates -->
+                        <div class="terms-section">
+                            <h3>13. Trip Updates</h3>
+                            <p>Guidelines for modifying reservations.</p>
+                            
+                            <div class="update-process">
+                                <h4>How to Request Changes:</h4>
+                                <ol class="terms-list">
+                                    <li>Contact reservations team (24+ hours preferred)</li>
+                                    <li>Provide booking confirmation number</li>
+                                    <li>Specify requested changes in detail</li>
+                                </ol>
+                            </div>
+                            
+                            <h4>Pricing Impact:</h4>
+                            <ul class="terms-list">
+                                <li><strong>Extended time/mileage:</strong> Additional hourly/distance charges</li>
+                                <li><strong>Vehicle upgrades:</strong> Difference in rate applies</li>
+                                <li><strong>Last-minute changes:</strong> $50 administrative fee</li>
+                            </ul>
+                            
+                            <div class="warning-box">
+                                <p><strong>Note:</strong> Significant changes may be treated as cancellation - standard cancellation policy applies.</p>
+                            </div>
+                        </div>
+            
+            <!-- General Notes -->
+            <div class="terms-section">
+                <h3>General Terms</h3>
+                <ul class="terms-list">
+                    <li>All bookings subject to these terms and conditions</li>
+                    <li>We reserve the right to update these terms without notice</li>
+                    <li>By making a reservation, you agree to these terms</li>
+                </ul>
+                
+                <h4>Contact Us:</h4>
+                <p>For questions or to modify reservations:</p>
+                <ul class="terms-list">
+                    <li><i class="fas fa-phone"></i> (615) 555-0123</li>
+                    <li><i class="fas fa-envelope"></i> info@ambassadors.limo</li>
+                </ul>
+            </div>
+        </div>
+        <p class="note">By using our services, you agree to these terms. We reserve the right to update this policy without notice.</p>
+    </div>
+        </div>
+
+
+       
+      <!-- Footer -->
+      <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Fleet</a></li>
+                    <li><a href="#">Tours</a></li>
+                </ul>
+    
+            </div>
+    
+    
+            <div class="footer-section">
+                <h3>Company Info</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Contact & Support</h3>
+                <p><strong>Call:</strong> 615-977-9500</p>
+                <p><strong>Email:</strong> info@ambassadors.limo</p>
+                <a href="#">Home</a>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter for updates on luxury transportation services.</p>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p id="copyright">&copy;2024 AMBASSADORS. All rights reserved. Experience luxury transportation with us.</p>
+            <div class="footer-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-google"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-spotify"></i></a>
+            </div>
+        </div>
+        
+    </footer>
+
+ </body>
+ </html>
+    
