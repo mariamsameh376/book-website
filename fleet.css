@@ -217,9 +217,10 @@ body {
 
 .buttons {
     display: flex;
-    gap: 10px; 
+    gap: 10px;
     justify-content: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+    margin-top: auto;
 }
 
 .btn {
@@ -257,6 +258,7 @@ body {
     gap: 15px;
     padding: 30px;
     flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .services-box {
@@ -266,7 +268,9 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 30%;
     text-align: center;
-
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 .services-box:hover {
@@ -547,9 +551,7 @@ body {
         font-size: 14px;
     }
 
-    .image-container img {
-        height: 400px;
-    }
+
 
     .services-box {
         width: 100%;

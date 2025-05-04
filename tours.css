@@ -217,9 +217,10 @@ body {
 
 .buttons {
     display: flex;
-    gap: 10px; 
-    justify-content: center; 
-    flex-wrap: wrap; 
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: auto;
 }
 
 .btn {
@@ -258,6 +259,7 @@ body {
     gap: 15px;
     padding: 30px;
     flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .services-box {
@@ -267,6 +269,10 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 30%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    
 
 }
 
@@ -519,4 +525,105 @@ body {
 
 .social-icons a:hover {
     color: #1e90ff;
+}
+
+/* === Media Queries لتصغير الشاشات مثل الموبايل أو التابلت === */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .text-overlay h1 {
+        font-size: 24px;
+    }
+
+    .text-overlay p {
+        font-size: 14px;
+    }
+
+
+
+    .services-box {
+        width: 100%;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .map,
+    .form-section {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-section form {
+        flex-direction: column;
+    }
+
+    .footer-section input {
+        width: 100%;
+    }
+}
+
+
+/* زر القائمة يظهر فقط على الشاشات الصغيرة */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: gold;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        padding: 10px 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        width: 100%;
+    }
 }

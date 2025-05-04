@@ -40,7 +40,9 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="booo.html" class="btn">Reservations</a></li>
             </ul>
-            
+            <div class="menu-toggle" id="menu-toggle">
+                &#9776; <!-- رمز hamburger -->
+            </div>
         </nav>
         
     </header>
@@ -392,6 +394,15 @@
     </div>
     
 </footer>
+
+<script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    toggleBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+</script>
 
 
    
